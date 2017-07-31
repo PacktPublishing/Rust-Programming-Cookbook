@@ -1,0 +1,10 @@
+//-- #########################
+//-- Task: Testing cargo fmt features
+//-- Author: Vigneshwer.D
+//-- Version: 1.0.0
+ //-- Date: 04 May 17
+//-- #########################
+
+fn main() {
+      println!("Hello, world!");
+ }

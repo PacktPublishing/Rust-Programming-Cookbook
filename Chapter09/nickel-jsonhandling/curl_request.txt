@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X POST -d '{"firstname":"Vigneshwer","lastname":"Dhinakaran"}' http://127.0.0.1:6767/a/post/request

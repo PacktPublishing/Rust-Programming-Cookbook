@@ -1,0 +1,9 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+authors = ["Vigneshwer.D <dvigneshwer@gmail.com>"]
+
+[dependencies]
+time = "0.1.12"
+regex = "0.1.41"
+rand = { git = "https://github.com/rust-lang-nursery/rand.git", rev = "9f35b8e" }

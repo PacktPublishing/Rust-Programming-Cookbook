@@ -1,0 +1,7 @@
+[package]
+authors = ["Vigneshwer.D <vigneshwer.d@mu-sigma.com>"]
+name = "sample_rand"
+version = "0.1.0"
+
+[dependencies]
+rand = "0.3.15"

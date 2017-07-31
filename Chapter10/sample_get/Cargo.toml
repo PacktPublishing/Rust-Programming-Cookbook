@@ -1,0 +1,12 @@
+[package]
+name = "sample_get"
+version = "0.1.0"
+authors = ["Vigneshwer.D <dvigneshwer@gmail.com>"]
+
+[dependencies]
+nickel = "*"
+mongodb = "*"
+bson = "*"
+rustc-serialize = "*"
+
+

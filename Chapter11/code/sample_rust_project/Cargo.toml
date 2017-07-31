@@ -1,0 +1,10 @@
+[package]
+name = "sample_rust_project"
+version = "0.1.0"
+authors = ["Vigneshwer.D <dvigneshwer@gmail.com>"]
+
+[dependencies]
+clippy = {version = "*", optional = true}
+
+[features]
+default = []
