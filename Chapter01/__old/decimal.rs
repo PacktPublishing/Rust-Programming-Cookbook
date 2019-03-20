@@ -15,4 +15,4 @@ fn main(){
 	// Shifts
 	println!("{ten:>ws$}",ten=10, ws=5 );
 	println!("{ten:>0ws$}",ten=10, ws=5 );
-}
+} 
