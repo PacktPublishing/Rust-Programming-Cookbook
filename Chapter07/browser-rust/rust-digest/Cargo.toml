@@ -1,0 +1,23 @@
+[package]
+name = "rust-digest"
+version = "0.1.0"
+authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "digest"
+crate-type = ["cdylib"]
+
+[dependencies]
+sha2 = "0.8"
+wasm-bindgen = "0.2.47"
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'Node',
+  'Window',
+]

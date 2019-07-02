@@ -1,0 +1,11 @@
+[package]
+name = "rust-tinyexpr"
+version = "0.1.0"
+authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
+edition = "2018"
+build = "build.rs"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.49"
