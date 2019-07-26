@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 pb-3">
+                <h1>Welcome {{ user }}.</h1>
+                <h2 class="text-muted">Your bookmarks:</h2>
+            </div>
+        </div>
+
+        {{#if bookmarks.is_empty() }}
+        <div class="row">
+            <div class="col-lg-12">
+            No bookmarks :(
+            </div>
+        </div>
+        {{~/if}}
+        
+        {{#each bookmarks}}
+            <div class="row {{# if index % 2 == 1 }} bg-light text-dark {{/if }} mt-2 mb-2">
+            {{> partials/bookmark }}
+            </div>
+        {{~/each}}
+    </div>
+</body>
+
+</html>

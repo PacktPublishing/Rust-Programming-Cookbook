@@ -1,7 +1,0 @@
-cargo:rustc-link-lib=python2.7
-cargo:rustc-link-search=native=/usr/lib
-cargo:rustc-cfg=py_sys_config="Py_USING_UNICODE"
-cargo:rustc-cfg=py_sys_config="WITH_THREAD"
-cargo:rustc-cfg=py_sys_config="Py_UNICODE_SIZE_4"
-
-cargo:python_flags=FLAG_Py_USING_UNICODE=1,FLAG_WITH_THREAD=1,VAL_Py_UNICODE_SIZE=4

@@ -1,0 +1,8 @@
+<div class="col-lg-2">
+    <img class="rounded img-fluid p-1" src="data:{{ mime }};base64,{{ base64_image }}"> </div>
+<div class="col-lg-10">
+    <a href="{{ url }}">
+        <h3>{{ url.replace("https://", "") }}</h3>
+    </a>
+    <i class="text-muted">Added {{ timestamp.format("%Y-%m-%d").to_string() }}</i>
+</div>
