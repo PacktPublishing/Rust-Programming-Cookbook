@@ -1,5 +1,3 @@
-extern crate bindgen;
-
 use std::env;
 use std::env::var;
 
@@ -12,6 +10,11 @@ fn main() {
 
     println!("cargo:rustc-link-search={}/../tinyexpr/", project_dir);
     println!("cargo:rustc-link-lib=static=tinyexpr");
+
+    if cfg!(target_env = "msvc") {
+        println!("cargo:rustc-link-lib=static=legacy_stdio_definitions");
+    }
+    
     let bindings = bindgen::Builder::default()
         .header(HEADER_FILE_NAME)
         .generate()
