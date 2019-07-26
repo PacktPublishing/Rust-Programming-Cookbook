@@ -1,0 +1,21 @@
+[package]
+name = "external-deps"
+version = "0.1.0"
+authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+regex =  { git = "https://github.com/rust-lang/regex" } # bleeding edge libraries
+
+# specifying crate features
+serde = { version = "1", features = ["derive"] }
+serde_json = "*" # pick whatever version
+
+
+[dev-dependencies]
+criterion = "0.2.11"
+
+
+[[bench]]
+name = "cooking_with_rust"
+harness = false

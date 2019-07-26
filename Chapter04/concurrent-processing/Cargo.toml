@@ -1,0 +1,18 @@
+[package]
+name = "concurrent-processing"
+version = "0.1.0"
+authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rayon = "1.0.3"
+
+
+[dev-dependencies]
+criterion = "0.2.11"
+rand = "^0.5"
+
+
+[[bench]]
+name = "seq_vs_par"
+harness = false

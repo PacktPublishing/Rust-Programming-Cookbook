@@ -1,7 +1,0 @@
-[package]
-name = "nickel-routing"
-version = "0.1.0"
-authors = ["Vigneshwer.D <dvigneshwer@gmail.com>"]
-
-[dependencies]
-nickel = "*"
