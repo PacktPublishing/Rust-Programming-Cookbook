@@ -1,0 +1,24 @@
+# Scan this file for changes every 30 seconds
+refresh_rate: 30 seconds
+
+appenders:
+  stdout:
+    kind: console
+
+  outfile:
+    kind: file
+    path: "outfile.log"
+    encoder:
+      pattern: "{d} - {m}{n}"
+
+root:
+  level: trace
+  appenders:
+    - stdout
+
+loggers:
+  special-target:
+    level: info
+    appenders:
+      - outfile
+    additive: false

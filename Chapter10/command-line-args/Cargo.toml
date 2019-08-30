@@ -1,12 +1,10 @@
 [package]
-name = "reading-hardware"
-version = "0.1.0"
+name = "list"
+version = "1.0.0"
 authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tokio = "0.1"
-tokio-timer = "0.2"
-rand = "0.5"
+clap = {version= "2.33", features = ["suggestions", "color"]}

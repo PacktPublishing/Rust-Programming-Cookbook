@@ -26,14 +26,17 @@ pub fn start() -> Result<(), JsValue> {
 
 #[wasm_bindgen]
 pub extern "C" fn digest_attach(data: String, elem_id: String) -> Result<(), JsValue> {
-    let window = web_sys::window().expect("no global `window` exists");
-    let document = window.document().expect("should have a document on window");
-    //let body = document.body().expect("document should have a body");
-
-    // Manufacture the element we're gonna append
-    let val = document.get_element_by_id(&elem_id).expect(&format!("Could not get element with id '{}'", elem_id));
-    let signature = hex_digest(&data);
-    val.set_inner_html(&signature);
-    Ok(())
+    web_sys::window().map_or(Err("No window found".into()), |win| {
+        if let Some(doc) = win.document() {
+            doc.get_element_by_id(&elem_id).map_or(Err(format!("No element with id {} found", elem_id).into()), |val|{
+                let signature = hex_digest(&data);
+                val.set_inner_html(&signature);
+                Ok(())
+            })
+        }
+        else {
+            Err("No document found".into())
+        }
+    })
 }
 // No tests :( 

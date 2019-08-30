@@ -1,0 +1,14 @@
+ls
+ls | sort-by name
+ls | sort-by name --desc
+ls | sort-by name
+ls
+ls --short
+ls | paginate
+cd workspace/Mine/
+cd Rust-Cookbook/Chapter10
+ls
+cd web-requests/
+ls
+code .
+cargo update

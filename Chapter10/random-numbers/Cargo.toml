@@ -1,9 +1,10 @@
 [package]
-name = "async-await"
+name = "random-numbers"
 version = "0.1.0"
 authors = ["Claus Matzinger <claus.matzinger+kb@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-runtime = "0.3.0-alpha.6"
-surf = "1.0"
+rand = {version = "0.7", features = ["small_rng"]}
+rand_distr = "0.2"
+rand_pcg = "0.2"

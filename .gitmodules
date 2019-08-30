@@ -1,0 +1,3 @@
+[submodule "Chapter10/rusty-ml/fashion-mnist"]
+	path = Chapter10/rusty-ml/fashion-mnist
+	url = https://github.com/zalandoresearch/fashion-mnist.git

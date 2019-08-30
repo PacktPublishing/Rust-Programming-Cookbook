@@ -1,7 +1,0 @@
-[package]
-authors = ["Vigneshwer.D <vigneshwer.d@mu-sigma.com>"]
-name = "sample_file"
-version = "0.1.0"
-
-[dependencies]
-error-chain = "0.10.0"
