@@ -16,7 +16,7 @@ impl Exclusion {
 fn walk(
     dir: &Path,
     exclusion: &Option<Exclusion>,
-    cb: &Fn(&DirEntry),
+    cb: &dyn Fn(&DirEntry),
     recurse: bool,
 ) -> io::Result<()> {
     for entry in dir.read_dir()? {
@@ -86,10 +86,9 @@ fn main() -> io::Result<()> {
         )
         .get_matches();
 
-    let filter_conf = matches.value_of("match").unwrap_or("");
     let recurse = matches.is_present("recursive");
     let exclusions = matches.value_of("exclude").map(|e| Exclusion(e.into()));
-    
+
     match matches.subcommand() {
         ("files", Some(subcmd)) => {
             let path = Path::new(subcmd.value_of("PATH").unwrap());

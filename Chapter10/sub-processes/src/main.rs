@@ -4,21 +4,27 @@ use std::process::{Command, Stdio};
 
 fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     let mut ls_child = Command::new("ls");
-    ls_child.args(&["-alh"]);
-    ls_child.status()?;
+    if !cfg!(target_os = "windows") {
+        ls_child.args(&["-alh"]);
+    }
+    println!("{}", ls_child.status()?);
     ls_child.current_dir("src/");
- 
+    println!("{}", ls_child.status()?);
+
     let env_child = Command::new("env")
         .env("CANARY", "0x5ff")
         .stdout(Stdio::piped())
         .spawn()?;
-    
+
     let env_output = &env_child.wait_with_output()?;
-    let canary = String::from_utf8_lossy(&env_output.stdout).split_ascii_whitespace().filter(|line| *line == "CANARY=0x5ff").count();
+    let canary = String::from_utf8_lossy(&env_output.stdout)
+        .split_ascii_whitespace()
+        .filter(|line| *line == "CANARY=0x5ff")
+        .count();
 
     // found it!
     assert_eq!(canary, 1);
-    
+
     let mut rev_child = Command::new("rev")
         .stdin(Stdio::piped())
         .stdout(Stdio::piped())

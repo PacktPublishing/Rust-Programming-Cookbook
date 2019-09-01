@@ -50,7 +50,7 @@ fn log_some_stuff() {
     error!("ERROR: stopping ...");
 }
 
-const USE_CUSTOM: bool = false;
+const USE_CUSTOM: bool = true;
 
 fn main() {
     if USE_CUSTOM { 

@@ -1,4 +1,3 @@
-# Scan this file for changes every 30 seconds
 refresh_rate: 30 seconds
 
 appenders:
@@ -21,4 +20,3 @@ loggers:
     level: info
     appenders:
       - outfile
-    additive: false
