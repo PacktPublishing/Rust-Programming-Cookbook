@@ -139,52 +139,6 @@ impl<T> List<T> where T: Sized + Clone  {
                 .value
         })
     }
-
-
-    ///
-    /// Splits off and returns `n` nodes as a `List<T>`.  
-    /// 
-    /// # Arguments
-    /// 
-    /// `n: usize` - The number of elements after which to split the list. 
-    /// 
-    /// # Panics
-    /// 
-    /// Panics when: 
-    ///  - The list is empty
-    ///  - `n` is larger than the length
-    /// 
-    /// # Example
-    /// 
-    /// ```
-    /// # use testing::List;
-    /// 
-    /// let mut list = List::new_empty(); 
-    /// list.append(12);
-    /// list.append(11);
-    /// list.append(10);
-    /// let mut list2 = list.split(1);
-    /// assert_eq!(list2.pop(), Some(12));
-    /// assert_eq!(list.pop(), Some(11));
-    /// assert_eq!(list.pop(), Some(10));
-    /// ```
-    /// 
-    pub fn split(&mut self, n: usize) -> List<T> {
-
-        // Don't do this in real life. Use Results, Options, or anything that 
-        // doesn't just kill the program
-        if self.length == 0 || n >=  self.length - 1 {
-            panic!("That's not working");
-        }
-
-        let mut n = n;
-        let mut new_list = List::new_empty();
-        while n > 0 {
-            new_list.append(self.pop().unwrap());
-            n -= 1;
-        }
-        new_list
-    }
 }
 
 impl <T>Drop for List<T> where T: Clone + Sized {
@@ -225,7 +179,7 @@ mod tests {
         list.append(1);
         list.append(1);
         list.append(1);
-        list.append(1);
+        list.append(1);     
         list.append(1);
         assert_eq!(list.length, 5);
     }
@@ -247,26 +201,5 @@ mod tests {
         assert_eq!(list.pop(), Some(1));
         assert_eq!(list.length, 0);
         assert_eq!(list.pop(), None);
-    }
-
-    #[test]
-    fn test_list_split() {
-        let mut list = List::new_empty();
-        list.append(1);
-        list.append(1);
-        list.append(1);
-        list.append(1);
-        list.append(1);
-        assert_eq!(list.length, 5);
-        let list2 = list.split(3);
-        assert_eq!(list.length, 2);
-        assert_eq!(list2.length, 3);
-    }
-
-    #[test]
-    #[should_panic]
-    fn test_list_split_panics() {
-        let mut list: List<i32> = List::new_empty();
-        let _ = list.split(3);
     }
 }

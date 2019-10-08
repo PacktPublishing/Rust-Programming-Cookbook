@@ -1,7 +1,5 @@
 #![feature(test)]
 
-//pub mod list;
-
 #[cfg(test)]
 mod tests {
     extern crate test;

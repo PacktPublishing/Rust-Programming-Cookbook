@@ -1,4 +1,3 @@
-extern crate tch;
 use std::io::{Error, ErrorKind};
 use std::path::Path;
 use std::time::Instant;
@@ -118,14 +117,18 @@ fn predict_from_best() -> failure::Fallible<()> {
     let net = ConvNet::new(&vs.root(), 10);
 
     // restore weights
-    println!("Loading model weights from '{}'", model_weights_path.to_string_lossy());
+    println!(
+        "Loading model weights from '{}'",
+        model_weights_path.to_string_lossy()
+    );
     vs.load(model_weights_path)?;
 
     println!("Probabilities and predictions for 10 random images in the test set");
     for (image_batch, label_batch) in m.test_iter(1).shuffle().to_device(vs.device()).take(10) {
         let raw_tensor = net
             .forward_t(&image_batch, false)
-            .softmax(-1).view(m.labels);
+            .softmax(-1)
+            .view(m.labels);
         let predicted_index: Vec<i64> = raw_tensor.argmax(0, false).into();
         let probabilities: Vec<f64> = raw_tensor.into();
 
@@ -133,7 +136,7 @@ fn predict_from_best() -> failure::Fallible<()> {
         for p in probabilities {
             print!("{:.4} ", p);
         }
-        let label: Vec<i64> = label_batch.into(); 
+        let label: Vec<i64> = label_batch.into();
         println!("] predicted {}, was {}", predicted_index[0], label[0]);
     }
     Ok(())
