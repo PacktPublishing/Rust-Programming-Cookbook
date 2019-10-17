@@ -48,9 +48,10 @@ mod tests {
         let chosen = emoji.choose_multiple(&mut rng, 3);
         assert_eq!(chosen, ['😱', '🙃', '😭']);
 
-        let mut three_wise_monkeys = vec!['🙈', '🙉', '🙊'];
+        let mut three_wise_monkeys = vec!['🙈','🙉', '🙊'];
         three_wise_monkeys.shuffle(&mut rng);
-        assert_eq!(three_wise_monkeys, ['🙈', '🙉', '🙊']);
+        three_wise_monkeys.shuffle(&mut rng); // in this case, the first time won't change anything
+        assert_eq!(three_wise_monkeys, ['🙈', '🙊', '🙉']);
 
         let mut three_wise_monkeys = vec!['🙈', '🙉', '🙊'];
         let partial = three_wise_monkeys.partial_shuffle(&mut rng, 2);
