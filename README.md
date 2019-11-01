@@ -54,9 +54,9 @@ With the following software and hardware list you can run all code files present
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781789530667_ColorImages.pdf).
 
 ### Related products
-* Mastering Rust - Second Edition  [[Packt]](https://www.packtpub.com/application-development/mastering-rust-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789346572) [[Amazon]](https://www.amazon.com/dp/)
+* Mastering Rust - Second Edition  [[Packt]](https://www.packtpub.com/application-development/mastering-rust-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789346572) [[Amazon]](https://www.amazon.com/dp/B07GVNJ77X)
 
-* Hands-On Data Structures and Algorithms with Rust  [[Packt]](https://www.packtpub.com/application-development/hands-data-structures-and-algorithms-rust?utm_source=github&utm_medium=repository&utm_campaign=9781788995528) [[Amazon]](https://www.amazon.com/dp/)
+* Hands-On Data Structures and Algorithms with Rust  [[Packt]](https://www.packtpub.com/application-development/hands-data-structures-and-algorithms-rust?utm_source=github&utm_medium=repository&utm_campaign=9781788995528) [[Amazon]](https://www.amazon.com/dp/178899552X)
 
 ## Get to Know the Author
 **Claus Matzinger**
