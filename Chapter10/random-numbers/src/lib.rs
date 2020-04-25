@@ -41,21 +41,21 @@ mod tests {
         // seed for predictable outcomes
         let mut rng: StdRng = SeedableRng::from_seed([42; 32]);
 
-        let emoji = "😄🙃🤪🙄😭😱".chars();
+        let emoji = "ABCDEF".chars();
         let chosen_one = emoji.clone().choose(&mut rng).unwrap();
-        assert_eq!(chosen_one, '🙃');
+        assert_eq!(chosen_one, 'B');
 
         let chosen = emoji.choose_multiple(&mut rng, 3);
-        assert_eq!(chosen, ['😱', '🙃', '😭']);
+        assert_eq!(chosen, ['F', 'B', 'E']);
 
-        let mut three_wise_monkeys = vec!['🙈','🙉', '🙊'];
+        let mut three_wise_monkeys = vec!['1', '2', '3'];
         three_wise_monkeys.shuffle(&mut rng);
         three_wise_monkeys.shuffle(&mut rng); // in this case, the first time won't change anything
-        assert_eq!(three_wise_monkeys, ['🙈', '🙊', '🙉']);
+        assert_eq!(three_wise_monkeys, ['1', '3', '2']);
 
-        let mut three_wise_monkeys = vec!['🙈', '🙉', '🙊'];
+        let mut three_wise_monkeys = vec!['1', '2', '3'];
         let partial = three_wise_monkeys.partial_shuffle(&mut rng, 2);
-        assert_eq!(partial.0, ['🙊', '🙉']);
+        assert_eq!(partial.0, ['3', '2']);
     }
 
     #[test]

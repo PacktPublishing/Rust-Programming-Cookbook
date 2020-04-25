@@ -1,37 +1,68 @@
-# Rust Cookbook
-This is the code repository for [Rust Cookbook](https://www.packtpub.com/application-development/rust-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781785880254), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the book from start to finish.
-## About the Book
-If you are building concurrent applications, server-side programs, or high-performance applications, you will benefit from this language. This book comes with a lot of application-specific recipes to kick-start your development of real-world high-performance applications with the Rust programming language and integrating Rust units into your existing applications. In this book, you will find some 80 practical recipes written in Rust that will allow you to use the code samples right away in your existing applications. These recipes have been tested with stable rust compiler versions of 1.14.0 and above.
-This book will help you understand the core concepts of the Rust language, enabling you to develop efficient and high-performance applications by incorporating features such as zero cost abstraction and better memory management.
+# Rust Programming Cookbook 
+
+<a href="https://www.packtpub.com/programming/rust-programming-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781789530667"><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781789530667-original.jpeg" alt="Rust Programming Cookbook " height="256px" align="right"></a>
+
+This is the code repository for [Rust Programming Cookbook ](https://www.packtpub.com/programming/rust-programming-cookbook?utm_source=github&utm_medium=repository&utm_campaign=9781789530667), published by Packt.
+
+**Explore the latest features of Rust 2018 for building fast and secure apps**
+
+## What is this book about?
+Rust 2018, Rust's first major milestone since version 1.0, brings more advancement in the Rust language. The Rust Programming Cookbook is a practical guide to help you overcome challenges when writing Rust code.
 
 
-## Instructions and Navigation
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
+This book covers the following exciting features:
+Understand how Rust provides unique solutions to solve system programming language problems 
+Grasp the core concepts of Rust to develop fast and safe applications 
+Explore the possibility of integrating Rust units into existing applications for improved efficiency 
+Discover how to achieve better parallelism and security with Rust 
+Write Python extensions in Rust 
+Compile external assembly files and use the Foreign Function Interface (FFI) 
+Build web applications and services using Rust for high performance 
 
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1789530660) today!
 
+<a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
+alt="https://www.packtpub.com/" border="5" /></a>
+
+## Instructions and Navigations
+All of the code is organized into folders. For example, Chapter02.
 
 The code will look like the following:
 ```
- // expression
-    let x_val = 5u32;
-
-    // y block 
-    let y_val = {
-        let x_squared = x_val * x_val;
-        let x_cube = x_squared * x_val;
-
-        // This expression will be assigned to `y_val`
-        x_cube + x_squared + x_val
-    };
-
+fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
+   let mut ls_child = Command::new("ls");
+   if !cfg!(target_os = "windows") {
+       ls_child.args(&["-alh"]);
 ```
 
+**Following is what you need for this book:**
+The Rust cookbook is for software developers looking to enhance their knowledge of Rust and leverage its features using modern programming practices. Familiarity with Rust language is expected to get the most out of this book.
 
 
-## Related Products
-* [Rust Essentials](https://www.packtpub.com/application-development/rust-essentials?utm_source=github&utm_medium=repository&utm_campaign=9781785285769)
+With the following software and hardware list you can run all code files present in the book (Chapter 1-).
+### Software and Hardware List
+| No | Software required | OS required |
+| -------- | ------------------------------------ | ----------------------------------- |
+| 1 | Rust nightly > 2019-10-10 | Windows/Linux/macOS |
+| 2 | Visual Studio Code | Windows/Linux/macOS |
+| 3 | Docker CE stable 19.03 | Windows/Linux/macOS |
+| 4 | Node.js 10.16.3 | Windows/Linux/macOS |
+| 5 | Python 3.6 or later | Windows/Linux/macOS |
+| 6 | gcc >= 9.2 | Windows/Linux/macOS |
+| 7 | Rust stable > 1.38.0 | Windows/Linux/macOS |
 
-* [Learning Rust](https://www.packtpub.com/application-development/learning-rust?utm_source=github&utm_medium=repository&utm_campaign=9781785884306)
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781789530667_ColorImages.pdf).
 
-* [Rust Essentials - Second Edition](https://www.packtpub.com/application-development/rust-essentials-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781788390019)
+### Related products
+* Mastering Rust - Second Edition  [[Packt]](https://www.packtpub.com/application-development/mastering-rust-second-edition?utm_source=github&utm_medium=repository&utm_campaign=9781789346572) [[Amazon]](https://www.amazon.com/dp/B07GVNJ77X)
+
+* Hands-On Data Structures and Algorithms with Rust  [[Packt]](https://www.packtpub.com/application-development/hands-data-structures-and-algorithms-rust?utm_source=github&utm_medium=repository&utm_campaign=9781788995528) [[Amazon]](https://www.amazon.com/dp/178899552X)
+
+## Get to Know the Author
+**Claus Matzinger**
+is a software engineer with a very diverse background. After working in a small company maintaining code for embedded devices, he joined a large corporation to work on legacy Smalltalk applications. This led to a great interest in programming languages early on, and Claus became the CTO for a health games start-up based on Scala technology. Since then, Claus' roles have shifted toward customer-facing roles in the IoT database technology start-up, Crate IO (creators of CrateDB), and, most recently, Microsoft. There, he hosts a podcast, writes code together with customers, and blogs about the solutions arising from these engagements. For more than 5 years, Claus has been implementing software to help customers innovate, achieve, and maintain success.
+
+### Suggestions and Feedback
+[Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
+
 
