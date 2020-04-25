@@ -4,7 +4,7 @@ extern crate actix_web;
 use actix_web::{
     guard, http::Method, middleware, web, App, HttpResponse, HttpServer,
 };
-use serde_derive::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 use std::env;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
