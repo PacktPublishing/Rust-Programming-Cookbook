@@ -66,3 +66,8 @@ is a software engineer with a very diverse background. After working in a small 
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSdy7dATC6QmEL81FIUuymZ0Wy9vH1jHkvpY57OiMeKGqib_Ow/viewform) if you have any feedback or suggestions.
 
 
+### Special thanks 
+
+Rust is an evolving language and we rely on you to point out anything that has changed since the book release. Open an issue if you find something won't compile and we'll gladly help out.
+
+@tomus85 - Thank you updating three recipes: static-web, json-handling, and legacy-c-code.
