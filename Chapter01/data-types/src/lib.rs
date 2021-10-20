@@ -1,21 +1,18 @@
-
+#![warn(arithmetic_overflow)]
 // Rust allows another macro type: derive. It allows to "auto-implement"
 // supported traits. Clone, Debug, Copy are typically handy to derive.
 #[derive(Clone, Debug, Copy)]
 struct MyCustomStruct {
     a: i32,
     b: u32,
-    pub c: f32
+    pub c: f32,
 }
 
 // A typical Rust struct has an impl block for behavior
 impl MyCustomStruct {
-    
     // The new function is static function, and by convention a constructor
     pub fn new(a: i32, b: u32, c: f32) -> MyCustomStruct {
-        MyCustomStruct {
-            a: a, b: b, c: c
-        }
+        MyCustomStruct { a: a, b: b, c: c }
     }
 
     // Instance functions feature a "self" reference as the first parameter
@@ -25,17 +22,18 @@ impl MyCustomStruct {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
-    use std::mem;
     use super::MyCustomStruct;
+    use std::mem;
 
     #[test]
     fn test_custom_struct() {
         // Rust features zero-overhead structs!
-        assert_eq!(mem::size_of::<MyCustomStruct>(), 
-            mem::size_of::<i32>() + mem::size_of::<u32>() + mem::size_of::<f32>());
+        assert_eq!(
+            mem::size_of::<MyCustomStruct>(),
+            mem::size_of::<i32>() + mem::size_of::<u32>() + mem::size_of::<f32>()
+        );
 
         let m = MyCustomStruct::new(1, 2, 3_f32);
         assert_eq!(m.a, 1);
@@ -49,12 +47,12 @@ mod tests {
         let m2 = m.clone();
         // We use the Debug formatter to format the struct
         assert_eq!(format!("{:?}", m2), "MyCustomStruct { a: 1, b: 2, c: 3.0 }");
-        
+
         // This is an implicit (deep) copy, possible only with the Copy trait
         // Added mutability allows to change struct members
         let mut m3 = m;
-        
-        // As a copy, this should not affect the other instances 
+
+        // As a copy, this should not affect the other instances
         m3.a = 100;
 
         // We'll make sure that the values didn't change anywhere else
@@ -87,7 +85,7 @@ mod tests {
         assert_eq!(a.overflowing_sub(b), (18446744073709551584, true));
 
         // By default, Rust variables are immutable, add the mut qualifier
-        // to be able to change the value 
+        // to be able to change the value
         let mut c = 100;
         c += 1;
         assert_eq!(c, 101);
@@ -102,6 +100,10 @@ mod tests {
         // This will panic since the result is going to be an unsigned
         // type which cannot handle negative numbers
         // Note: _ means ignore the result
-        let _ = a - b; 
+        // Note: In the Rust 2021 edition, the rust compiler will catch this
+        // error before the runtime has a chance to panic!
+        //    let _ = a - b;
+        //             ^^^^^ attempt to compute `10_u32 - 11_u32`, which would overflow
+        let _ = a - b;
     }
 }
