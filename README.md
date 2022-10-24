@@ -70,4 +70,7 @@ is a software engineer with a very diverse background. After working in a small 
 
 Rust is an evolving language and we rely on you to point out anything that has changed since the book release. Open an issue if you find something won't compile and we'll gladly help out.
 
-@tomus85 - Thank you updating three recipes: static-web, json-handling, and legacy-c-code.
+@tomus85 - Thank you updating three recipes: static-web, json-handling, and legacy-c-code.### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781789530667">https://packt.link/free-ebook/9781789530667 </a> </p>
